@@ -1,7 +1,8 @@
 package com.clientesweb.demo.clientes.infrastructure.rest.controller;
 
 import com.clientesweb.demo.clientes.application.service.ClienteService;
-import com.clientesweb.demo.clientes.infrastructure.rest.dtos.RequestSaveDTO;
+import com.clientesweb.demo.clientes.infrastructure.rest.dtos.RequestSaveDTOCliente;
+import com.clientesweb.demo.exceptions.AppBadRequestException;
 import com.clientesweb.demo.utils.Wrapper;
 import com.clientesweb.demo.utils.exceptions.AppInternalServerErrorException;
 import com.clientesweb.demo.utils.exceptions.AppNotFoundException;
@@ -32,12 +33,12 @@ public class ClientesController {
     }
 
     @PostMapping
-    public ResponseEntity<Wrapper> save(@RequestBody RequestSaveDTO data) throws AppInternalServerErrorException {
+    public ResponseEntity<Wrapper> save(@RequestBody RequestSaveDTOCliente data) throws AppInternalServerErrorException, AppBadRequestException {
         return clienteService.save(data);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Wrapper> update(@PathVariable Long id, @RequestBody RequestSaveDTO data) throws AppInternalServerErrorException, AppNotFoundException {
+    public ResponseEntity<Wrapper> update(@PathVariable Long id, @RequestBody RequestSaveDTOCliente data) throws AppInternalServerErrorException, AppNotFoundException {
         return clienteService.update(id, data);
     }
 

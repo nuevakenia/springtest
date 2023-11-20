@@ -1,15 +1,12 @@
 package com.clientesweb.demo.cuenta.domain.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.clientesweb.demo.clientes.domain.entity.ClienteEntity;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
 import java.time.LocalDate;
 
 @Getter
@@ -27,9 +24,15 @@ public class CuentaEntity {
 
     private String tipoCuenta;
 
-    private Date fechaCreacion;
+    private LocalDate fechaCreacion;
 
-    private Date fechaVigencia;
+    private LocalDate fechaVigencia;
 
     private Boolean estado;
+
+    //relaciones
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_cliente")
+    private ClienteEntity clientes;
 }

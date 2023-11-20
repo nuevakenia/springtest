@@ -1,9 +1,10 @@
 package com.clientesweb.demo.clientes.infrastructure.rest.mapper;
 
-import com.clientesweb.demo.clientes.domain.entity.ClientesEntity;
-import com.clientesweb.demo.clientes.infrastructure.rest.dtos.RequestSaveDTO;
-import com.clientesweb.demo.clientes.infrastructure.rest.dtos.ResponseDTOClientes;
+import com.clientesweb.demo.clientes.domain.entity.ClienteEntity;
+import com.clientesweb.demo.clientes.infrastructure.rest.dtos.RequestSaveDTOCliente;
+import com.clientesweb.demo.clientes.infrastructure.rest.dtos.ResponseDTOCliente;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 
 
@@ -11,9 +12,12 @@ import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface ClientesMapper {
-    ResponseDTOClientes entityToDTO(ClientesEntity clientesEntity);
-    ClientesEntity dtoToEntity(RequestSaveDTO clientesDTO);
-    List<ResponseDTOClientes> entitiesToDtos(List<ClientesEntity> clientesEntities);
+    List<ResponseDTOCliente> entitiesToDtos(List<ClienteEntity> clientesEntities);
 
-    void updateEntity(RequestSaveDTO clientesDto, @MappingTarget ClientesEntity clientesEntity);
+    @Mapping(source = "cuentas", target = "idCuenta")
+    ResponseDTOCliente entityToDTO(ClienteEntity clienteEntity);
+    @Mapping(source = "idCuenta", target = "cuentas.id")
+    ClienteEntity dtoToEntity(RequestSaveDTOCliente clientesDTO);
+
+    void updateEntity(RequestSaveDTOCliente clientesDto, @MappingTarget ClienteEntity clienteEntity);
 }

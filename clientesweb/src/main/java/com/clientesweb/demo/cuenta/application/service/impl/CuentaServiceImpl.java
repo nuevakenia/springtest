@@ -2,7 +2,7 @@ package com.clientesweb.demo.cuenta.application.service.impl;
 
 import com.clientesweb.demo.cuenta.domain.entity.CuentaEntity;
 import com.clientesweb.demo.cuenta.domain.repository.CuentaRepository;
-import com.clientesweb.demo.cuenta.infrastructure.rest.dtos.RequestSaveDTO;
+import com.clientesweb.demo.cuenta.infrastructure.rest.dtos.RequestSaveDTOCuenta;
 import com.clientesweb.demo.cuenta.infrastructure.rest.dtos.ResponseDTOCuenta;
 import com.clientesweb.demo.cuenta.infrastructure.rest.mapper.CuentaMapper;
 import com.clientesweb.demo.cuenta.application.service.CuentaService;
@@ -70,7 +70,7 @@ public class CuentaServiceImpl implements CuentaService {
     }
 
     @Override
-    public ResponseEntity<Wrapper> save(RequestSaveDTO data) throws AppInternalServerErrorException {
+    public ResponseEntity<Wrapper> save(RequestSaveDTOCuenta data) throws AppInternalServerErrorException {
         try {
             CuentaEntity entity = cuentaMapper.dtoToEntity(data);
             CuentaEntity created = cuentaRepository.save(entity);
@@ -84,7 +84,7 @@ public class CuentaServiceImpl implements CuentaService {
     }
 
     @Override
-    public ResponseEntity<Wrapper> update(Long idEditar, RequestSaveDTO data) throws AppNotFoundException, AppInternalServerErrorException {
+    public ResponseEntity<Wrapper> update(Long idEditar, RequestSaveDTOCuenta data) throws AppNotFoundException, AppInternalServerErrorException {
         try {
             CuentaEntity entity = getById(idEditar);
             cuentaMapper.updateEntity(data, entity);
