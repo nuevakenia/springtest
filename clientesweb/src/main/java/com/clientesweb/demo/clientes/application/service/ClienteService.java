@@ -2,7 +2,7 @@ package com.clientesweb.demo.clientes.application.service;
 
 import com.clientesweb.demo.clientes.domain.entity.ClienteEntity;
 import com.clientesweb.demo.clientes.infrastructure.rest.dtos.RequestSaveDTOCliente;
-import com.clientesweb.demo.exceptions.AppBadRequestException;
+import com.clientesweb.demo.utils.exceptions.AppBadRequestException;
 import com.clientesweb.demo.utils.Wrapper;
 import com.clientesweb.demo.utils.exceptions.AppInternalServerErrorException;
 import com.clientesweb.demo.utils.exceptions.AppNotFoundException;

@@ -7,7 +7,7 @@ import com.clientesweb.demo.clientes.infrastructure.rest.dtos.RequestSaveDTOClie
 import com.clientesweb.demo.clientes.infrastructure.rest.dtos.ResponseDTOCliente;
 import com.clientesweb.demo.clientes.infrastructure.rest.mapper.ClientesMapper;
 import com.clientesweb.demo.cuenta.domain.repository.CuentaRepository;
-import com.clientesweb.demo.exceptions.AppBadRequestException;
+import com.clientesweb.demo.utils.exceptions.AppBadRequestException;
 import com.clientesweb.demo.utils.Wrapper;
 import com.clientesweb.demo.utils.commons.ResponseService;
 import com.clientesweb.demo.utils.exceptions.AppInternalServerErrorException;
