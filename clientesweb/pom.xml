@@ -20,7 +20,7 @@
 		<maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
 		<jacoco.version>0.8.8</jacoco.version>
 		<spring-starter-web.version>3.1.0</spring-starter-web.version>
-		<modeel-mapper.verion>3.0.0</modeel-mapper.verion>
+		<model-mapper.verion>3.0.0</model-mapper.verion>
 		<spring-beans.version>6.0.9</spring-beans.version>
 		<snakayaml.verion>2.0</snakayaml.verion>
 		<logback-core.version>1.4.7</logback-core.version>
@@ -79,22 +79,12 @@
 		<dependency>
 			<groupId>org.modelmapper</groupId>
 			<artifactId>modelmapper</artifactId>
-			<version>${modeel-mapper.verion}</version>
+			<version>${model-mapper.verion}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-beans</artifactId>
 			<version>${spring-beans.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
 		</dependency>
 	</dependencies>
 

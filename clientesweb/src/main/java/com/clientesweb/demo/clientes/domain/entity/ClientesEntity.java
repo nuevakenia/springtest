@@ -1,5 +1,9 @@
 package com.clientesweb.demo.clientes.domain.entity;
 
+import java.time.LocalDate;
+import java.util.Set;
+
+import com.clientesweb.demo.cuenta.domain.entity.CuentaEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,4 +26,7 @@ public class ClientesEntity {
     private String apellido;
     private String email;
     private LocalDate fechaCreacion;
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<CuentaEntity> cuentas;
+
 }
