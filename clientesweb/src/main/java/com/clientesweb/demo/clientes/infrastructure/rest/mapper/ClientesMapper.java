@@ -12,12 +12,12 @@ import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface ClientesMapper {
-    List<ResponseDTOCliente> entitiesToDtos(List<ClienteEntity> clientesEntities);
 
-    @Mapping(source = "cuentas", target = "idCuenta")
     ResponseDTOCliente entityToDTO(ClienteEntity clienteEntity);
-    @Mapping(source = "idCuenta", target = "cuentas.id")
+
     ClienteEntity dtoToEntity(RequestSaveDTOCliente clientesDTO);
+
+    List<ResponseDTOCliente> entitiesToDtos(List<ClienteEntity> clientesEntities);
 
     void updateEntity(RequestSaveDTOCliente clientesDto, @MappingTarget ClienteEntity clienteEntity);
 }

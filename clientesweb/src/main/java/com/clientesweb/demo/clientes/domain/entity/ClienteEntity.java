@@ -26,7 +26,6 @@ public class ClienteEntity {
     private LocalDate fechaCreacion;
 
     //relaciones
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_cuenta")
-    private CuentaEntity cuentas;
+    @OneToMany( mappedBy =  "clientes", fetch = FetchType.LAZY) // mapeado como clientes en  CuentaEntity
+    private List<CuentaEntity> cuentas;
 }

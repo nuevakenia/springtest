@@ -14,7 +14,7 @@ public interface ClienteService {
 
     public ResponseEntity<Wrapper> findAll() throws AppNotFoundException, AppInternalServerErrorException;
     public ResponseEntity<Wrapper> findById(Long id) throws AppNotFoundException, AppInternalServerErrorException;
-    public ResponseEntity<Wrapper> save(RequestSaveDTOCliente data) throws AppInternalServerErrorException, AppBadRequestException;
+    public ResponseEntity<Wrapper> save(RequestSaveDTOCliente data) throws AppInternalServerErrorException, AppBadRequestException, AppNotFoundException;
     public ResponseEntity<Wrapper> update(Long idEditar, RequestSaveDTOCliente data) throws AppNotFoundException, AppInternalServerErrorException;
     public ResponseEntity<Wrapper> delete(Long id) throws AppNotFoundException, AppInternalServerErrorException;
 }

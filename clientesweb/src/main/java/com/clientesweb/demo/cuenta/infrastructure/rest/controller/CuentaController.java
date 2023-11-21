@@ -32,7 +32,7 @@ public class CuentaController {
     }
 
     @PostMapping
-    public ResponseEntity<Wrapper> save(@RequestBody RequestSaveDTOCuenta data) throws AppInternalServerErrorException {
+    public ResponseEntity<Wrapper> save(@RequestBody RequestSaveDTOCuenta data) throws AppInternalServerErrorException, AppNotFoundException {
         return cuentaService.save(data);
     }
 

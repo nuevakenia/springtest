@@ -33,7 +33,7 @@ public class ClientesController {
     }
 
     @PostMapping
-    public ResponseEntity<Wrapper> save(@RequestBody RequestSaveDTOCliente data) throws AppInternalServerErrorException, AppBadRequestException {
+    public ResponseEntity<Wrapper> save(@RequestBody RequestSaveDTOCliente data) throws AppInternalServerErrorException, AppNotFoundException, AppBadRequestException {
         return clienteService.save(data);
     }
 

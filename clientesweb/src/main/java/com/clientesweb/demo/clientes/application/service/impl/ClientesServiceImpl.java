@@ -75,10 +75,10 @@ public class ClientesServiceImpl implements ClienteService {
     }
 
     @Override
-    public ResponseEntity<Wrapper> save(RequestSaveDTOCliente data) throws AppInternalServerErrorException, AppBadRequestException {
+    public ResponseEntity<Wrapper> save(RequestSaveDTOCliente data) throws AppInternalServerErrorException, AppNotFoundException {
 
-        if(cuentaRepository.findOneOptional(data.getIdCuenta()).isPresent())
-            throw new AppBadRequestException("Error: cuenta no encontrada.");
+        cuentaRepository.findOneOptional(data.getIdCuenta())
+                .orElseThrow(() -> new AppNotFoundException("Cuenta no encontrada."));
 
         try {
             ClienteEntity entity = clientesMapper.dtoToEntity(data);

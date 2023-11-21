@@ -13,5 +13,5 @@ public class ResponseDTOCuenta {
     private Date fechaCreacion;
     private Date fechaVigencia;
     private Boolean estado;
-
+    private Long clienteId;
 }

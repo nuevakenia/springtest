@@ -70,7 +70,11 @@ public class CuentaServiceImpl implements CuentaService {
     }
 
     @Override
-    public ResponseEntity<Wrapper> save(RequestSaveDTOCuenta data) throws AppInternalServerErrorException {
+    public ResponseEntity<Wrapper> save(RequestSaveDTOCuenta data) throws AppInternalServerErrorException, AppNotFoundException {
+
+        cuentaRepository.findOneOptional(data.getIdCuenta())
+                .orElseThrow(() -> new AppNotFoundException("Cliente no encontrada."));
+
         try {
             CuentaEntity entity = cuentaMapper.dtoToEntity(data);
             CuentaEntity created = cuentaRepository.save(entity);

@@ -13,7 +13,7 @@ public interface CuentaService {
 
     public ResponseEntity<Wrapper> findAll() throws AppNotFoundException, AppInternalServerErrorException;
     public ResponseEntity<Wrapper> findById(Long id) throws AppNotFoundException, AppInternalServerErrorException;
-    public ResponseEntity<Wrapper> save(RequestSaveDTOCuenta data) throws AppInternalServerErrorException;
+    public ResponseEntity<Wrapper> save(RequestSaveDTOCuenta data) throws AppInternalServerErrorException, AppNotFoundException;
     public ResponseEntity<Wrapper> update(Long idEditar, RequestSaveDTOCuenta data) throws AppNotFoundException, AppInternalServerErrorException;
     public ResponseEntity<Wrapper> delete(Long id) throws AppNotFoundException, AppInternalServerErrorException;
 }

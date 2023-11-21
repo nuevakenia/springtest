@@ -10,5 +10,4 @@ public class ResponseDTOCliente {
     private String nombre;
     private String apellido;
     private String email;
-    private CuentaEntity idCuenta;
 }
