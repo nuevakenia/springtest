@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -35,4 +36,7 @@ public class CuentaEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_cliente")
     private ClienteEntity clientes;
+
+    @OneToMany( mappedBy =  "transacciones", fetch = FetchType.LAZY) // mapeado como transacciones en  TransaccionEntity
+    private List<CuentaEntity> cuentas;
 }
